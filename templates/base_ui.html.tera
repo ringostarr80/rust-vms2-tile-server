@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vms2TileServer</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.1/dist/css/materialize.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.1/dist/js/materialize.min.js"></script>
+        {% if active_nav_element =="demo" %}
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+        <link rel="stylesheet" href="css/demo.css">
+        <script type="module" src="js/demo.js"></script>
+        {% endif %}
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo right">Logo</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="./" class="{% if active_nav_element =="home" %}active{% endif %}">Home</a></li>
+                    <li><a href="./open_api" class="{% if active_nav_element =="open_api" %}active{% endif %}">OpenAPI</a></li>
+                    <li><a href="./demo" class="{% if active_nav_element =="demo" %}active{% endif %}">Demo</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vms2TileServer / OpenAPI</title>
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/@stoplight/elements/styles.min.css">
+        <script type="text/javascript" src="https://unpkg.com/@stoplight/elements/web-components.min.js"></script>
+    </head>
+    <body>
+        <elements-api apidescriptionurl="../api/open_api.json" router="hash" layout="sidebar"></elements-api>
+    </body>
+</html>

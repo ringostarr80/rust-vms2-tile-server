@@ -1,0 +1,8 @@
+{% extends "base_ui" %}
+
+{% block content %}
+    <iframe
+        src="open_api/stoplight"
+        title="open_api stoplight frame"
+        style="border: 0; position: absolute; bottom: 0; width: 100%; height: calc(100% - 64px);"></iframe>
+{% endblock %}

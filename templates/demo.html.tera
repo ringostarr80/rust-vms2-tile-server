@@ -1,0 +1,5 @@
+{% extends "base_ui" %}
+
+{% block content %}
+    <div id="map"></div>
+{% endblock %}
