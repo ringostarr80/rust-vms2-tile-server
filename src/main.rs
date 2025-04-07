@@ -46,6 +46,7 @@ pub async fn main() -> Result<(), Error> {
         .mount("/", FileServer::from(relative!("static")))
         .mount("/", ui_route::get_routes())
         .mount("/api", api_route::get_routes())
+        .mount("/vms2-tile-server/api", api_route::get_routes())
         .attach(Template::fairing())
         .manage(global_data)
         .launch()
