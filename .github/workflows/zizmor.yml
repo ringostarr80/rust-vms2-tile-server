@@ -1,4 +1,4 @@
-name: Rust
+name: GitHub Actions Security Audit
 
 permissions: {}
 
@@ -12,20 +12,17 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  CARGO_TERM_COLOR: always
-
 jobs:
-  build:
-    name: Build
+  audit:
+    name: Audit workflows with zizmor
     runs-on: ubuntu-latest
-
     permissions:
-      contents: read
-
+      contents: read  # Required by actions/checkout to read the repository
+      security-events: write  # Required to upload SARIF results to GitHub Code Scanning
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         persist-credentials: false
-    - name: Build
-      run: cargo build --verbose
+
+    - name: Run zizmor
+      uses: zizmorcore/zizmor-action@5f14fd08f7cf1cb1609c1e344975f152c7ee938d # v0.5.6
